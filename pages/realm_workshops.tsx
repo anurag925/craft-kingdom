@@ -45,11 +45,11 @@ const RealmWorkshops = () => {
     setIsBusy(busy);
   };
 
-  useEffect(() => {
-    if (!isLoggedIn && !isLoading) {
-      router.push("/login");
-    }
-  }, [isLoggedIn, isLoading, router]);
+  // useEffect(() => {
+  //   if (!isLoggedIn && !isLoading) {
+  //     router.push("/login");
+  //   }
+  // }, [isLoggedIn, isLoading, router]);
 
   return (
     <MainWrapper>
@@ -91,16 +91,16 @@ const RealmWorkshops = () => {
 export default RealmWorkshops;
 
 export async function getServerSideProps(context: any) {
-  const user = await getUser(context.req);
+  // const user = await getUser(context.req);
 
-  if (!user) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+  // if (!user) {
+  //   return {
+  //     redirect: {
+  //       destination: "/login",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: {},

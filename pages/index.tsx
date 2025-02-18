@@ -94,11 +94,11 @@ const Home: NextPage = () => {
     setKingdomData((prevState) => ({ ...prevState, [target!]: value! }));
   };
 
-  useEffect(() => {
-    if (!isLoggedIn && !isLoading) {
-      router.push("/login");
-    }
-  }, [isLoggedIn, isLoading, router]);
+  // useEffect(() => {
+  //   if (!isLoggedIn && !isLoading) {
+  //     router.push("/login");
+  //   }
+  // }, [isLoggedIn, isLoading, router]);
 
   useEffect(() => {checkOwnedBuildings();}, [stakedTokens])
 
@@ -123,16 +123,16 @@ const Home: NextPage = () => {
 export default Home;
 
 export async function getServerSideProps(context: any) {
-  const user = await getUser(context.req);
+  // const user = await getUser(context.req);
 
-  if (!user) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+  // if (!user) {
+  //   return {
+  //     redirect: {
+  //       destination: "/login",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: {},

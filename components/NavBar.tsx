@@ -16,6 +16,7 @@ import { FaBuilding, FaCity, FaMap } from "react-icons/fa6";
 import { MdHome, MdMoney, MdShield, MdVilla } from "react-icons/md";
 import { FaBalanceScale } from "react-icons/fa";
 import { BigNumber } from "ethers";
+import WalletConnectButton from "./WalletConnectButton";
 
 const NavBar = () => {
   const address = useAddress();
@@ -49,23 +50,23 @@ const NavBar = () => {
       }
   }
 
-  useEffect(() => {
-    if (!isLoggedIn && !isLoading) {
-      router.push("/login");
-    }
-  }, [isLoggedIn, isLoading, router]);
+  // useEffect(() => {
+  //   if (!isLoggedIn && !isLoading) {
+  //     router.push("/login");
+  //   }
+  // }, [isLoggedIn, isLoading, router]);
 
-  useEffect(() => {
-    if (isLoggedIn && showConnectEmbed) {
-      router.push("/login");
-    }
-  }, [showConnectEmbed, isLoggedIn]);
+  // useEffect(() => {
+  //   if (isLoggedIn && showConnectEmbed) {
+  //     router.push("/login");
+  //   }
+  // }, [showConnectEmbed, isLoggedIn]);
 
   useEffect(() => {checkOwnedTavern()}, [stakedTokens]);
 
   return (
     <div className={styles.full_with}>
-      {isLoggedIn && (
+      {/* {isLoggedIn && ( */}
         <div className={styles.navbarContainer}>
           <Link href="/">
             <div className={styles.navbar_header}>
@@ -139,10 +140,11 @@ const NavBar = () => {
                 </div>
               </p>
             )}
-            <ConnectWallet className="web3_component" />
+            {/* <ConnectWallet className="web3_component" /> */}
+            <WalletConnectButton></WalletConnectButton>
           </div>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };

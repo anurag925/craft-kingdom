@@ -9,11 +9,11 @@ const WorldMap = () => {
   const { isLoggedIn, isLoading } = useUser();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!isLoggedIn && !isLoading) {
-      router.push("/login");
-    }
-  }, [isLoggedIn, isLoading, router]);
+  // useEffect(() => {
+  //   if (!isLoggedIn && !isLoading) {
+  //     router.push("/login");
+  //   }
+  // }, [isLoggedIn, isLoading, router]);
 
   return (
     <MainWrapper>
@@ -30,16 +30,16 @@ const WorldMap = () => {
 export default WorldMap;
 
 export async function getServerSideProps(context: any) {
-  const user = await getUser(context.req);
+  // const user = await getUser(context.req);
 
-  if (!user) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
+  // if (!user) {
+  //   return {
+  //     redirect: {
+  //       destination: "/login",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   return {
     props: {},

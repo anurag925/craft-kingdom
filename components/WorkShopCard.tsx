@@ -19,9 +19,9 @@ import Dialog from "./Dialog";
 
 type Props = {
   tokenId: number;
-  claimEarnings;
-  onBusy;
-  onPropertyChange;
+  claimEarnings: any;
+  onBusy: any;
+  onPropertyChange: any;
 };
 
 const WorkShopCard = ({
